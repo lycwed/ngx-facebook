@@ -1,6 +1,6 @@
-# ngx-facebook
+# ngx-fb
 
-This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2+ by providing components, providers and types.
+This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 9.* by providing components, providers and types.
 
 <br><br>
 
@@ -19,7 +19,7 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 #### 1. Install via NPM:
 
 ```shell
-npm i --save ngx-facebook
+npm i --save ngx-fb
 ```
 
 #### 2. Add the Facebook JavaScript SDK to your index.html
@@ -30,7 +30,7 @@ npm i --save ngx-facebook
 #### 3. Import `FacebookModule` into your app's root module
 ```typescript
 
-import { FacebookModule } from 'ngx-facebook';
+import { FacebookModule } from 'ngx-fb';
 
 @NgModule({
   ...
@@ -49,7 +49,7 @@ If you only want to use [FacebookService](https://zyra.github.io/ngx-facebook/fa
 This method must be called before using [`login`](http://zyra.github.io/ngx-facebook/facebook-service/#login) or [`api`](http://zyra.github.io/ngx-facebook/facebook-service/#api) methods. It is not required for other methods/components.
 
 ```typescript
-import { FacebookService, InitParams } from 'ngx-facebook';
+import { FacebookService, InitParams } from 'ngx-fb';
 
 ...
 
@@ -86,7 +86,7 @@ You can view our [example project here](https://zyra.github.io/ngx-facebook-exam
 ### Example of login with Facebook
 
 ```typescript
-import { FacebookService, LoginResponse } from 'ngx-facebook';
+import { FacebookService, LoginResponse } from 'ngx-fb';
 
 @Component(...)
 export class MyComponent {
@@ -108,7 +108,7 @@ export class MyComponent {
 
 ### Example of sharing on Facebook
 ```typescript
-import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
+import { FacebookService, UIParams, UIResponse } from 'ngx-fb';
 
 ...
 
@@ -148,7 +148,7 @@ share(url: string) {
 ```
 ```typescript
 import { Component, ViewChild } from '@angular/core';
-import { FBVideoComponent } from 'ngx-facebook';
+import { FBVideoComponent } from 'ngx-fb';
 
 @Component(...)
 export class MyComponent {
