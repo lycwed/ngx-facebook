@@ -13,7 +13,7 @@ export function FBMLAttribute(target: any, key: string) {
     get: function() {
       return this.getAttribute(processKey(key));
     },
-    enumerable: true
+    enumerable: true,
   });
 }
 
@@ -26,11 +26,12 @@ export function FBMLInstanceMethod(target: any, key: string) {
     value: function(...args: any[]) {
       if (this._instance) {
         return this._instance[key].apply(this._instance, args);
-      } else {
+      }
+      else {
         console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
         return null;
       }
-    }
+    },
   };
 }
 
@@ -38,26 +39,20 @@ export function FBMLInstanceMethod(target: any, key: string) {
  * @hidden
  */
 export class FBMLComponent {
-
   protected nativeElement: HTMLElement;
 
-  constructor(
-    private el: ElementRef,
-    private rnd: Renderer2,
-    private fbClass: string
-  ) {
+  constructor(private el: ElementRef, private rnd: Renderer2, private fbClass: string) {
     this.nativeElement = this.el.nativeElement;
-    this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
+    this.rnd.addClass(this.nativeElement, this.fbClass);
   }
 
   protected setAttribute(name: string, value: string) {
     if (!name || !value) return;
-    this.rnd.setElementAttribute(this.nativeElement, name, value);
+    this.rnd.setAttribute(this.nativeElement, name, value);
   }
 
   protected getAttribute(name: string): string {
     if (!name) return;
     return this.nativeElement.getAttribute(name);
   }
-
 }

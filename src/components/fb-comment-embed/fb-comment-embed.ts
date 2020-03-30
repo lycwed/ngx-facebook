@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -15,10 +15,9 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  */
 @Component({
   selector: 'fb-comment-embed',
-  template: ''
+  template: '',
 })
 export class FBCommentEmbedComponent extends FBMLComponent {
-
   /**
    * The absolute URL of the comment.
    */
@@ -40,11 +39,7 @@ export class FBCommentEmbedComponent extends FBMLComponent {
   @FBMLAttribute
   includeParent: boolean;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-comment-embed');
   }
-
 }

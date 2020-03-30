@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -17,10 +17,9 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  */
 @Component({
   selector: 'fb-comments',
-  template: ''
+  template: '',
 })
 export class FBCommentsComponent extends FBMLComponent {
-
   /**
    * The color scheme used by the comments plugin. Can be `light` or `dark`. Defaults to `light`.
    */
@@ -69,11 +68,7 @@ export class FBCommentsComponent extends FBMLComponent {
   @FBMLAttribute
   width: string;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-comments');
   }
-
 }
